@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function getUserInfo(googleUser) {
+function handleCredentialResponse(googleUser) {
     var profile = googleUser.getBasicProfile();
     var imageUrl = profile.getImageUrl();
     var name = profile.getName();
