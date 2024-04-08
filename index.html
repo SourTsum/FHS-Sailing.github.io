@@ -53,17 +53,30 @@
     
     <div class="landingDiv">
         <h1>FHS Sailing</h1>
-        <p>Fairfield's combined highschool sailing team!</p>
+        <p>Fairfield's combined high school sailing team!</p>
         <img src="https://sundevilsailing.com/assets/img/sailing.jpg" class="landingImage">
     </div>
 <script>
     function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-      console.log('Name: ' + profile.getName());
-      console.log('Image URL: ' + profile.getImageUrl());
-      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    }
+    var profile = googleUser.getBasicProfile();
+    var imageUrl = profile.getImageUrl();
+    var name = profile.getName();
+    var email = profile.getEmail();
+    
+    // Output user information to the console
+    console.log('Name: ' + name);
+    console.log('Image URL: ' + imageUrl);
+    console.log('Email: ' + email);
+
+    // Close the Google Sign-In popup window
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        console.log('Google Sign-In popup closed.');
+    }).catch(function (error) {
+        console.error('Error closing Google Sign-In popup:', error);
+    });
+}
+
 </script>
 </body>
 </html>
