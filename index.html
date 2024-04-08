@@ -8,13 +8,6 @@
     <link href="login.css" rel="stylesheet" type="text/css">
     <script src="login.js"></script>
     <link href="index.css" rel="stylesheet" type="text/css">
-    
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <div id="g_id_onload"
-         data-client_id="191076601121-ielme7dd9vfpss315sct8ject8krn4du.apps.googleusercontent.com"
-         data-callback="handleCredentialResponse">
-    </div>
-
 </head>
 <body>
     <nav class="mainNav">
@@ -61,27 +54,5 @@
         <p>Fairfield's combined high school sailing team!</p>
         <img src="https://sundevilsailing.com/assets/img/sailing.jpg" class="landingImage">
     </div>
-<script>
-    function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    var imageUrl = profile.getImageUrl();
-    var name = profile.getName();
-    var email = profile.getEmail();
-    
-    // Output user information to the console
-    console.log('Name: ' + name);
-    console.log('Image URL: ' + imageUrl);
-    console.log('Email: ' + email);
-
-    // Close the Google Sign-In popup window
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-        console.log('Google Sign-In popup closed.');
-    }).catch(function (error) {
-        console.error('Error closing Google Sign-In popup:', error);
-    });
-}
-
-</script>
 </body>
 </html>
