@@ -1,0 +1,259 @@
+/* Global styles */
+body {
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 calc((100% - 1200px) / 2);
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.question,
+.explanation {
+    height: 43vh; /* Set a height of 50% of the viewport height */
+    width: 26vw;
+    overflow-y: auto; /* Add vertical scroll if content exceeds the height */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 0;
+}
+
+.explanation h2{
+    margin-bottom: 10px;
+}
+
+.image-container {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    max-height: 34vh; /* Reduce maximum height for vertical images */
+}
+
+
+
+.relatedTopic {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.splitter {
+    width: 1px;
+    background-color: #ccc;
+    margin: 0 20px;
+}
+
+.answers {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.answers ul {
+    list-style-type: none;
+}
+
+.answers li {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Multiple choice options */
+.answers ul {
+    list-style-type: none;
+}
+
+.answers li {
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.answers li:hover {
+    background-color: #e5e5e5;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3498db;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+input[type="radio"]:checked + label::before {
+    background-color: #3498db;
+}
+
+label:hover::before {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+form,
+button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+button.submitButton {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.submitButton:hover {
+    background-color: #2980b9;
+}
+
+.relatedTopicDiv {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabs button {
+    background-color: #fff;
+    padding: 10px;
+    width: fit-content;
+    color: black;
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-left: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    white-space: nowrap;
+    color: #384046;
+    font-weight: 600;
+    font-family: "Raleway", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    text-decoration: none;
+}
+
+.selected-tab {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-left: 1px solid #ccc; /* Gray border on the left */
+    border-right: 1px solid #ccc; /* Gray border on the right */
+    border-bottom: 1px solid #ccc; /* Gray border on the bottom */
+}
+
+.explanation {
+    display: none;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.tabs button {
+    border: 1px solid #ccc; /* Add border to all tabs */
+    border-top: 0;
+}
+
+.tabs button.selected-tab {
+    border-color: #3498db; /* Change border color for selected tab */
+}
+
+
+.submitFormDiv{
+    display: flex;
+}
+
+/* Style the radio button circle when the answer is correct */
+input[type='radio'].correct-answer + label::before {
+    background-color: #8bc34a; /* Green for correct answer */
+}
+
+/* Style the radio button circle when the answer is wrong */
+input[type='radio'].wrong-answer + label::before {
+    background-color: #f44336; /* Red for wrong answers */
+}
+
+/* Style the radio button's outer circle */
+input[type='radio'] + label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3498db;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.submitButton[disabled] {
+    opacity: 0.5; /* Reduce opacity to indicate disabled state */
+    cursor: not-allowed; /* Change cursor to indicate not clickable */
+}
+
